@@ -5,65 +5,58 @@
       <div class="wrap_header">
         <!-- Logo -->
         <router-link to="/" class="logo">
-          <img src="@/assets/images/icons/logo.png" alt="IMG-LOGO" />
+          <img src="@/assets/logo.png" alt="IMG-LOGO" />
         </router-link>
 
         <!-- Menu -->
         <div class="wrap_menu">
           <nav class="menu">
             <ul class="main_menu">
-              <MenuItem to="/" label="Trang chủ" />
+              <MenuItem to="/" label="Home" />
 
-              <MenuItem to="/products" label="Sản phẩm" />
+              <MenuItem to="/products" label="Products" />
 
-              <MenuItem to="/about" label="Build PC" />
+              <MenuItem to="/about" label="About" />
 
-              <MenuItem to="/contact" label="Liên hệ" />
+              <MenuItem to="/contact" label="Contact" />
             </ul>
           </nav>
         </div>
 
         <!-- Header Icon -->
         <div class="header-icons">
-          <a href="#" class="header-wrapicon1 dis-block">
+          <router-link :to="isLoginSuccess ? '/user' : '/login'">
             <img
-              src="@/assets/images/icons/icon-header-01.png"
+              :src="user?.avatar ? user.avatar : defaultAvatar"
               class="header-icon1"
-              alt="ICON"
+              alt="Avatar"
             />
-          </a>
-
+          </router-link>
           <span class="linedivide1"></span>
-
           <HeaderCartDropdown />
         </div>
       </div>
     </div>
-
-    Header Mobile
+    <!-- Header Mobile -->
     <div class="wrap_header_mobile">
       <!-- Logo moblie -->
       <router-link to="/" class="logo-mobile">
-        <img src="@/assets/images/icons/logo.png" alt="IMG-LOGO" />
+        <img src="@/assets/logo.png" alt="IMG-LOGO" />
       </router-link>
-
       <!-- Button show menu -->
       <div class="btn-show-menu">
         <!-- Header Icon mobile -->
         <div class="header-icons-mobile">
           <a href="#" class="header-wrapicon1 dis-block">
             <img
-              src="@/assets/images/icons/icon-header-01.png"
+              :src="user?.avatar ? user.avatar : defaultAvatar"
               class="header-icon1"
-              alt="ICON"
+              alt="Avatar"
             />
           </a>
-
           <span class="linedivide2"></span>
-
           <HeaderCartDropdown />
         </div>
-
         <div
           class="btn-show-menu-mobile hamburger hamburger--squeeze"
           :class="{ 'is-active': isShowMenuMobileDropdown }"
@@ -75,7 +68,6 @@
         </div>
       </div>
     </div>
-
     <!-- Menu Mobile -->
     <div
       class="wrap-side-menu"
@@ -88,11 +80,9 @@
               Free shipping for standard order over $100
             </span>
           </li>
-
           <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
             <div class="topbar-child2-mobile">
               <span class="topbar-email"> fashe@example.com </span>
-
               <div class="topbar-language rs1-select2">
                 <Select2
                   :options="[
@@ -107,7 +97,6 @@
               </div>
             </div>
           </li>
-
           <li class="item-topbar-mobile p-l-10">
             <div class="topbar-social-mobile">
               <a href="#" class="topbar-social-item fa fa-facebook"></a>
@@ -117,19 +106,15 @@
               <a href="#" class="topbar-social-item fa fa-youtube-play"></a>
             </div>
           </li>
-
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
-            <router-link to="/">Trang chủ</router-link>
+            <router-link to="/">Home</router-link>
           </li>
-
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
-            <router-link to="/products">Sản phẩm</router-link>
+            <router-link to="/products">Products</router-link>
           </li>
-
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
             <router-link to="/about">About</router-link>
           </li>
-
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
             <router-link to="/contact">Contact</router-link>
           </li>
@@ -138,39 +123,37 @@
     </div>
   </header>
 </template>
-
 <script>
+import { mapState } from "vuex";
+import defaultAvatar from "@/assets/icon-header-01.png";
 import MenuItem from "./MenuItem.vue";
-//import HeaderCartDropdown from "./HeaderCartDropdown.vue";
 import Select2 from "./Select2.vue";
+import HeaderCartDropdown from "@/components/HeaderCartDropDown.vue"
 
 export default {
   name: "MainHeader",
- 
   components: {
     MenuItem,
-    //HeaderCartDropdown,
+    HeaderCartDropdown,
     Select2,
   },
-
   data() {
     return {
+      defaultAvatar,
       language: {
         selected: {},
       },
       isShowMenuMobileDropdown: false,
     };
   },
-
+  computed: mapState("user", ["isLoginSuccess", "user"]),
   methods: {
     toggleMenuMobileDropdown() {
       this.isShowMenuMobileDropdown = !this.isShowMenuMobileDropdown;
     },
-
     closeMenuMobileDropdown() {
       this.isShowMenuMobileDropdown = false;
     },
   },
 };
 </script>
-

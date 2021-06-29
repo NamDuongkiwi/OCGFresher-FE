@@ -1,23 +1,20 @@
 <template>
   <div>
     <!-- Title Page -->
-    <section
-      class="bg-title-page p-t-50 p-b-40 flex-col-c-m"
-      :style="{
-        backgroundImage:
-          'url(' + require('@/assets/images/heading-pages-02.jpg') + ')',
-      }"
-    >
-      <h2 class="l-text2 t-center">Women</h2>
-      <p class="m-text13 t-center">New Arrivals Women Collection 2018</p>
-    </section>
+    <select>
+      <option v-for="cate in cates" :key="cate.id" :value="cate.id"> {{cate.category_name}}</option>
+    </select>
+    
+    <div v-for="cate in cates" :key="cate.id">
+      <h2>{{ cate.id }} - {{ cate.category_name }}</h2>
+    </div>
 
     <!-- Content page -->
     <section class="bgwhite p-t-55 p-b-65">
       <div class="container" style="max-width:1600px">
         <div class="row">
           <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
-            <LeftBar />
+            <LeftBar @get-cate="getCate"/>
           </div>
 
           <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
@@ -122,14 +119,24 @@ import { mapState, mapGetters, mapActions } from "vuex";
 import { currency } from "@/utils/currency";
 import Pagination from "@/components/Pagination.vue";
 import LeftBar from "./LeftBar.vue";
+import api from "@/services/products"
+
 
 export default {
   name: "Products",
+
+  data() {
+    return{
+      cates: [],
+    }
+  },
 
   components: {
     Pagination,
     LeftBar,
   },
+
+  
 
   computed: {
     ...mapState("products", [
@@ -166,6 +173,10 @@ export default {
     },
 
     ...mapActions("products", ["getProducts"]),
+    getCate(value){
+      this.cates = api.getChildCate(value)
+      console.log(this.cates)
+    }
   },
 };
 </script>

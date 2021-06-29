@@ -1,4 +1,4 @@
-import api from "@/services/products.service";
+import api from "@/services/products";
 
 const state = () => ({
   products: [],
@@ -73,6 +73,7 @@ const actions = {
     const categories = await api.getCategories();
     commit("setCategories", categories);
   },
+
 
   async getProductById({ commit }, productId) {
     commit("setLoading", true);

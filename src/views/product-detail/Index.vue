@@ -29,11 +29,11 @@
                   <div class="slick3-dot-overlay"></div>
                 </li>
                 <li>
-                  <img :src="require('@/assets/images/thumb-item-02.jpg')" />
+                  <img :src="require('@/assets/thumb-item-02.jpg')" />
                   <div class="slick3-dot-overlay"></div>
                 </li>
                 <li>
-                  <img :src="require('@/assets/images/thumb-item-03.jpg')" />
+                  <img :src="require('@/assets/thumb-item-02.jpg')" />
                   <div class="slick3-dot-overlay"></div>
                 </li>
               </ul>
@@ -42,11 +42,11 @@
             <div class="slick3">
               <div
                 class="item-slick3"
-                data-thumb="@/assets/images/thumb-item-01.jpg"
+                data-thumb="@/assets/thumb-item-02.jpg"
               >
                 <div class="wrap-pic-w">
                   <img
-                    src="@/assets/images/product-detail-01.jpg"
+                    src="@/assets/product-detail-01.jpg"
                     alt="IMG-PRODUCT"
                   />
                 </div>

@@ -1,14 +1,16 @@
 import { createStore } from "vuex";
+
 import products from "./modules/products";
-import cart from "./modules/cart";
+import user from "./modules/user";
 
 const debug = process.env.NODE_ENV !== "production";
 
 const store = createStore({
   strict: debug,
   modules: {
+
     products,
-    cart
+    user,
   },
 });
 

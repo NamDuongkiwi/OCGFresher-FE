@@ -27,41 +27,6 @@
 
     <h4 class="m-text14 p-b-32">Filters</h4>
 
-    <div class="filter-price p-t-22 p-b-50 bo3">
-      <div class="m-text15 p-b-17">Price</div>
-
-      <div class="wra-filter-bar">
-        <VueSlider
-          v-model="priceRange"
-          :min="50"
-          :max="200"
-          tooltip="none"
-          :dotOptions="{
-            style: {
-              backgroundColor: '#999999',
-              boxShadow: 'none',
-            },
-            focusStyle: {
-              backgroundColor: '#999999',
-              boxShadow: 'none',
-            },
-          }"
-          :railStyle="{ backgroundColor: '#e1e1e1' }"
-          :processStyle="{ backgroundColor: '#c5c5c5' }"
-        />
-      </div>
-
-      <div class="flex-sb-m flex-w p-t-16">
-        <div class="w-size11">
-          <!-- Button -->
-          <button class="flex-c-m size4 bg7 bo-rad-15 hov1 s-text14 trans-0-4">
-            Filter
-          </button>
-        </div>
-
-        <div class="s-text3 p-t-10 p-b-10">Range: {{ priceRangeDisplay }}</div>
-      </div>
-    </div>
 
     <div class="filter-color p-t-22 p-b-50 bo3">
       <Select2
@@ -96,14 +61,14 @@
 
 <script>
 import { mapState } from "vuex";
-import VueSlider from "vue-slider-component";
+//import VueSlider from "vue-slider-component";
 import Select2 from "@/components/Select2.vue";
 import "vue-slider-component/theme/default.css";
 
 export default {
   name: "LeftBar",
   components: {
-    VueSlider,
+    //VueSlider,
     Select2
   },
   data() {
@@ -126,17 +91,23 @@ export default {
   methods: {
     filterProductsByCategory(event, category) {
       event.preventDefault();
-      //console.log(category)
       this.$store.dispatch("products/getProducts", {
         pageIndex: 1,
         category,
       });
+      this.$emit('getCate', category.id)
     },
     searchProducts() {
       this.$store.dispatch("products/getProducts", {
         pageIndex: 1,
         search: this.searchKeyword,
       });
+    },
+    sortProducts(option) {
+      const options = option.value.split("-");
+      const sort = options[0],
+        order = options[1];
+      this.$store.dispatch("products/getProducts", { sort, order });
     },
   },
 };
@@ -150,3 +121,4 @@ export default {
   margin: 0 6px;
 }
 </style>
+

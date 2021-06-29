@@ -1,7 +1,7 @@
 <template>
   <div class="header-wrapicon2" @click="toggleCartDropdown">
     <img
-      src="@/assets/images/icons/icon-header-02.png"
+      src="@/assets/icon-header-02.png"
       class="header-icon1 js-show-header-dropdown"
       alt="ICON"
     />
@@ -64,24 +64,19 @@
 <script>
 import { mapState, mapGetters } from "vuex";
 import { currency } from "@/utils/currency";
-
 export default {
   name: "HeaderCartDropdown",
-
   computed: {
     ...mapState("cart", ["products", "isShowCartDropdown", "addToCartResult"]),
     ...mapGetters("cart", ["totalItems", "subTotal"]),
   },
-
   created() {
     this.$store.dispatch("cart/getProductsInCart");
   },
-
   methods: {
     toggleCartDropdown() {
       this.$store.commit("cart/setShowCartDropdown", !this.isShowCartDropdown);
     },
-
     currency,
   },
 };

@@ -1,17 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { BASE_URL } from "@/config";
-import Home from "@/pages/home/Index.vue";
+
+import Home from "../views/Home/Index.vue";
+import Products from "../views/products/Index.vue";
+import ProductDetail from "../views/product-detail/Index.vue";
+import About from "../views/about/Index.vue";
+import Contact from "../views/contact/Index.vue";
+import Cart from "../views/cart/Index.vue";
+import Login from "../views/login/Login.vue"
+
+
 
 const routes = [
   { path: "/", component: Home },
-  { path: "/products", component: () => import("@/pages/products/Index.vue") },
-  {
-    path: "/products/:id",
-    component: () => import("@/pages/product-detail/Index.vue"),
-  },
-  { path: "/about", component: () => import("@/pages/about/Index.vue") },
-  { path: "/contact", component: () => import("@/pages/contact/Index.vue") },
-  { path: "/cart", component: () => import("@/pages/cart/Index.vue") },
+  { path: "/products", component: Products },
+  { path: "/products/:id", component: ProductDetail },
+  { path: "/about", component: About },
+  { path: "/contact", component: Contact },
+  { path: "/cart", component: Cart },
+  { path: "/login", component: Login}
 ];
 
 const router = createRouter({

@@ -7,7 +7,7 @@
       <div class="flex-w">
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-          <img src="@/assets/images/gallery-03.jpg" alt="IMG-INSTAGRAM" />
+          <img src="@/assets/gallery-03.jpg" alt="IMG-INSTAGRAM" />
 
           <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
             <span
@@ -38,7 +38,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-          <img src="@/assets/images/gallery-07.jpg" alt="IMG-INSTAGRAM" />
+          <img src="@/assets/gallery-07.jpg" alt="IMG-INSTAGRAM" />
 
           <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
             <span
@@ -69,7 +69,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-          <img src="@/assets/images/gallery-09.jpg" alt="IMG-INSTAGRAM" />
+          <img src="@/assets/gallery-09.jpg" alt="IMG-INSTAGRAM" />
 
           <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
             <span
@@ -100,7 +100,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-          <img src="@/assets/images/gallery-13.jpg" alt="IMG-INSTAGRAM" />
+          <img src="@/assets/gallery-13.jpg" alt="IMG-INSTAGRAM" />
 
           <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
             <span
@@ -131,7 +131,7 @@
 
         <!-- Block4 -->
         <div class="block4 wrap-pic-w">
-          <img src="@/assets/images/gallery-15.jpg" alt="IMG-INSTAGRAM" />
+          <img src="@/assets/gallery-15.jpg" alt="IMG-INSTAGRAM" />
 
           <a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
             <span

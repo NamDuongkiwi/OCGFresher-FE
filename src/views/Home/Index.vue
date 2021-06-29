@@ -97,9 +97,9 @@ export default {
   data() {
     return {
       slides: [
-        { id: 1, image: require("@/assets/images/banner.jpg") },
-        { id: 2, image: require("@/assets/images/banner02.jpg") },
-        { id: 3, image: require("@/assets/images/banner03.png") },
+        { id: 1, image: require("@/assets/banner.jpg") },
+        { id: 2, image: require("@/assets/banner02.jpg") },
+        { id: 3, image: require("@/assets/banner03.png") },
       ],
     };
   },

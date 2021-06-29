@@ -5,7 +5,7 @@
         <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
           <!-- block1 -->
           <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/images/banner-02.jpg" alt="IMG-BENNER" />
+            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
 
             <div class="block1-wrapbtn w-size2">
               <!-- Button -->
@@ -17,7 +17,7 @@
 
           <!-- block1 -->
           <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/images/banner-05.jpg" alt="IMG-BENNER" />
+            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
 
             <div class="block1-wrapbtn w-size2">
               <!-- Button -->
@@ -31,7 +31,7 @@
         <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
           <!-- block1 -->
           <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/images/banner-03.jpg" alt="IMG-BENNER" />
+            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
 
             <div class="block1-wrapbtn w-size2">
               <!-- Button -->
@@ -43,7 +43,7 @@
 
           <!-- block1 -->
           <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/images/banner-07.jpg" alt="IMG-BENNER" />
+            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
 
             <div class="block1-wrapbtn w-size2">
               <!-- Button -->
@@ -57,7 +57,7 @@
         <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
           <!-- block1 -->
           <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/images/banner-04.jpg" alt="IMG-BENNER" />
+            <img src="@/assets/banner-02.jpg" alt="IMG-BENNER" />
 
             <div class="block1-wrapbtn w-size2">
               <!-- Button -->
@@ -69,7 +69,7 @@
 
           <!-- block2 -->
           <div class="block2 wrap-pic-w pos-relative m-b-30">
-            <img src="@/assets/images/icons/bg-01.jpg" alt="IMG" />
+            <img src="@/assets/banner.jpg" alt="IMG" />
 
             <div class="block2-content sizefull ab-t-l flex-col-c-m">
               <h4 class="m-text4 t-center w-size3 p-b-8">
