@@ -23,17 +23,9 @@
         <div class="w-size13 p-t-30 respon5">
           <div class="wrap-slick3 flex-sb flex-w">
             <div class="wrap-slick3-dots">
-              <ul class="slick3-dots" role="tablist">
-                <li class="slick-active">
-                  <img :src="product.images [0]" />
-                  <div class="slick3-dot-overlay"></div>
-                </li>
-                <li>
-                  <img :src="require('@/assets/thumb-item-02.jpg')" />
-                  <div class="slick3-dot-overlay"></div>
-                </li>
-                <li>
-                  <img :src="require('@/assets/thumb-item-02.jpg')" />
+              <ul class="slick3-dots" role="tablist" v-for="ima in product.images" :key=ima>
+                <li class="slick-active" @click="setImage($event, ima)">
+                  <img :src="ima" />
                   <div class="slick3-dot-overlay"></div>
                 </li>
               </ul>
@@ -46,7 +38,7 @@
               >
                 <div class="wrap-pic-w">
                   <img
-                    src="@/assets/product-detail-01.jpg"
+                    :src="image"
                     alt="IMG-PRODUCT"
                   />
                 </div>
@@ -64,28 +56,10 @@
 
           <div class="p-t-33 p-b-60">
             <div class="flex-m flex-w p-b-10">
-              <div class="s-text15 w-size15 t-center">Size</div>
-
-              <div class="w-size16">
-                <Select2
-                  :options="sizes"
-                  :value="productSize"
-                  @change="chooseSize"
-                />
-              </div>
+              
             </div>
 
-            <div class="flex-m flex-w">
-              <div class="s-text15 w-size15 t-center">Color</div>
-
-              <div class="w-size16">
-                <Select2
-                  :options="colors"
-                  :value="productColor"
-                  @change="chooseColor"
-                />
-              </div>
-            </div>
+            
 
             <div class="flex-r-m flex-w p-t-10">
               <div class="w-size16 flex-m flex-w">
@@ -140,7 +114,7 @@
             </div>
           </div>
 
-          <DropdownContent />
+          <p>{{product.description}}</p>
         </div>
       </div>
     </div>
@@ -161,17 +135,17 @@
 <script>
 import { mapState, mapMutations } from "vuex";
 import { currency } from "@/utils/currency";
-import Select2 from "@/components/Select2.vue";
+//import Select2 from "@/components/Select2.vue";
 import ProductsCarousel from "@/components/ProductsCarousel.vue";
-import DropdownContent from "./DropdownContent.vue";
+//import DropdownContent from "./DropdownContent.vue";
 
 export default {
   name: "ProductDetail",
 
   components: {
-    Select2,
+    //Select2,
     ProductsCarousel,
-    DropdownContent,
+    //DropdownContent,
   },
 
   data() {
@@ -179,50 +153,36 @@ export default {
       productImages: [],
       productSize: "",
       productColor: "",
-      sizes: [
-        { value: "", label: "Choose an option" },
-        { value: "s", label: "Size S" },
-        { value: "m", label: "Size M" },
-        { value: "l", label: "Size L" },
-        { value: "xl", label: "Size XL" },
-      ],
-      colors: [
-        { value: "", label: "Choose an option" },
-        { value: "gray", label: "Gray" },
-        { value: "red", label: "Red" },
-        { value: "black", label: "Black" },
-        { value: "blue", label: "Blue" },
-      ],
+      image: String
     };
   },
 
   computed: mapState("products", ["products", "product", "isLoading"]),
 
   created() {
+    
     // Get product detail
     this.$store.dispatch("products/getProductById", this.$route.params.id);
 
     // Get related products
     this.$store.dispatch("products/getFeaturedProducts");
   },
-
+  mounted(){
+    this.image = this.product.images[0]
+  },
   async beforeRouteUpdate(to) {
     this.$store.dispatch("products/getProductById", to.params.id);
   },
-
   methods: {
     currency,
 
-    chooseSize(option) {
-      this.productSize = option.value;
-    },
-
-    chooseColor(option) {
-      this.productColor = option.value;
+    setImage(event, ima){
+        this.image = ima
+        console.log(this.image)
     },
 
     addProductToCart() {
-      this.$store.dispatch("cart/addProductToCart", this.product);
+      this.$store.dispatch("cart/addProductToCart", this.product.id);
     },
 
     ...mapMutations("products", ["updateProductQuantity"]),

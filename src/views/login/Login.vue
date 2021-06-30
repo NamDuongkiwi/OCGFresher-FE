@@ -106,7 +106,7 @@ export default {
   computed: mapState("user", ["isLoginSuccess", "loginMessage"]),
   created() {
     if (this.isLoginSuccess) {
-      this.$router.replace("/user");
+      this.$router.replace("/");
     }
   },
   methods: {

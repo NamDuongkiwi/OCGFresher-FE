@@ -76,6 +76,7 @@
                                 s-text1
                                 trans-0-4
                               "
+                              @click="addProductToCart($event, product.id)"
                             >
                               Add to Cart
                             </button>
@@ -119,7 +120,7 @@ import { mapState, mapGetters, mapActions } from "vuex";
 import { currency } from "@/utils/currency";
 import Pagination from "@/components/Pagination.vue";
 import LeftBar from "./LeftBar.vue";
-import api from "@/services/products"
+//import api from "@/services/products"
 
 
 export default {
@@ -173,9 +174,10 @@ export default {
     },
 
     ...mapActions("products", ["getProducts"]),
-    getCate(value){
-      this.cates = api.getChildCate(value)
-      console.log(this.cates)
+    addProductToCart(event, id){
+      event.preventDefault();
+      console.log(id)
+      this.$store.dispatch("cart/addProductToCart",id)
     }
   },
 };

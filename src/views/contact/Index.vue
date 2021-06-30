@@ -1,23 +1,14 @@
 <template>
   <div>
     <!-- Title Page -->
-    <section
-      class="bg-title-page p-t-40 p-b-50 flex-col-c-m"
-      :style="{
-        backgroundImage:
-          'url(' + require('@/assets/heading-pages-01.jpg') + ')',
-      }"
-    >
-      <h2 class="l-text2 t-center">Contact</h2>
-    </section>
 
     <!-- content page -->
     <section class="bgwhite p-t-66 p-b-60">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 p-b-30">
-            <div class="p-r-20 p-r-0-lg">
-              <div class="contact-map size21" id="google_map"></div>
+          <div class="col-md-4 p-b-30">
+            <div class="hov-img-zoom">
+              <img src="@/assets/logo.png" alt="IMG-ABOUT" />
             </div>
           </div>
 

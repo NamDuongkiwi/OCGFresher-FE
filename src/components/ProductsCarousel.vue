@@ -28,7 +28,7 @@
               'block2-labelsale': product.isSale,
             }"
           >
-            <img :src="product.image" alt="IMG-PRODUCT" />
+            <img :src="product.images[0]" alt="IMG-PRODUCT" />
 
             <div class="block2-overlay trans-0-4">
               <router-link

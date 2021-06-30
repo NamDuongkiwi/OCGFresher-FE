@@ -13,11 +13,15 @@ const getters = {};
 const actions = {
   async login({ commit }, { email, password }) {
     try {
-      const user = await api.login({ email, password });
-
+      const response = await api.login({ email, password });
+      const id=response.id
+      const user=response.payload.user
+      console.log(user)
+      localStorage.setItem("id", id)
       commit("setUser", user);
       commit("setLoginSuccess", true);
       commit("setLoginMessage", "");
+      
     } catch (error) {
       commit("setLoginSuccess", false);
 

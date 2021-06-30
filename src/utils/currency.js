@@ -5,8 +5,8 @@ export function currency(value, currency, decimals) {
 
   if (!isFinite(value) || (!value && value !== 0)) return "";
 
-  currency = currency != null ? currency : "$";
-  decimals = decimals != null ? decimals : 2;
+  currency = currency != null ? currency : " vnđ";
+  decimals = decimals != null ? decimals : 0;
 
   let stringified = Math.abs(value).toFixed(decimals);
   let _int = decimals ? stringified.slice(0, -1 - decimals) : stringified;
@@ -16,6 +16,6 @@ export function currency(value, currency, decimals) {
   let sign = value < 0 ? "-" : "";
   
   return (
-    sign + currency + head + _int.slice(i).replace(digitsRE, "$1,") + _float
+    sign  + head + _int.slice(i).replace(digitsRE, "$1,") + _float + currency
   );
 }

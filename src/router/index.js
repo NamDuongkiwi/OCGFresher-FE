@@ -7,7 +7,7 @@ import ProductDetail from "../views/product-detail/Index.vue";
 import About from "../views/about/Index.vue";
 import Contact from "../views/contact/Index.vue";
 import Cart from "../views/cart/Index.vue";
-import Login from "../views/login/Login.vue"
+import Login from "../views/login/Login.vue";
 
 
 

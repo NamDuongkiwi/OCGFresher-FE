@@ -4,92 +4,61 @@
       <div class="row">
         <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
           <!-- block1 -->
-          <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
+          <div class="block1 hov-img-zoom pos-relative m-b-30" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <img src="@/assets/main.jpg" alt="IMG-BENNER" />
 
             <div class="block1-wrapbtn w-size2">
               <!-- Button -->
-              <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                Dresses
-              </a>
-            </div>
-          </div>
-
-          <!-- block1 -->
-          <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
-
-            <div class="block1-wrapbtn w-size2">
-              <!-- Button -->
-              <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                Sunglasses
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-          <!-- block1 -->
-          <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
-
-            <div class="block1-wrapbtn w-size2">
-              <!-- Button -->
-              <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                Watches
-              </a>
-            </div>
-          </div>
-
-          <!-- block1 -->
-          <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/banner02.jpg" alt="IMG-BENNER" />
-
-            <div class="block1-wrapbtn w-size2">
-              <!-- Button -->
-              <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                Footerwear
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
-          <!-- block1 -->
-          <div class="block1 hov-img-zoom pos-relative m-b-30">
-            <img src="@/assets/banner-02.jpg" alt="IMG-BENNER" />
-
-            <div class="block1-wrapbtn w-size2">
-              <!-- Button -->
-              <a href="#" class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
-                Bags
-              </a>
-            </div>
-          </div>
-
-          <!-- block2 -->
-          <div class="block2 wrap-pic-w pos-relative m-b-30">
-            <img src="@/assets/banner.jpg" alt="IMG" />
-
-            <div class="block2-content sizefull ab-t-l flex-col-c-m">
-              <h4 class="m-text4 t-center w-size3 p-b-8">
-                Sign up & get 20% off
-              </h4>
-
-              <p class="t-center w-size4">
-                Be the frist to know about the latest fashion news and get
-                exclu-sive offers
-              </p>
-
-              <div class="w-size2 p-t-25">
-                <!-- Button -->
-                <a
-                  href="#"
-                  class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4"
-                >
-                  Sign Up
+              <router-link to="/products">
+                <a class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                  Gaming gear
                 </a>
-              </div>
+              </router-link>
+            </div>
+          </div>
+
+          <!-- block1 -->
+          <div class="block1 hov-img-zoom pos-relative m-b-30" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <img src="@/assets/gear.jpg" alt="IMG-BENNER" />
+
+            <div class="block1-wrapbtn w-size2">
+              <!-- Button -->
+              <router-link to="/products">
+                <a class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                  Gaming gear
+                </a>
+              </router-link>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-10 col-md-8 col-lg-4 m-l-r-auto">
+          <!-- block1 -->
+          <div class="block1 hov-img-zoom pos-relative m-b-30" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <img src="@/assets/pad.jpg" alt="IMG-BENNER" />
+
+            <div class="block1-wrapbtn w-size2">
+              <!-- Button -->
+              <router-link to="/products">
+                <a class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4">
+                  Gaming gear
+                </a>
+              </router-link>
+            </div>
+          </div>
+
+          <!-- block1 -->
+          <div class="block1 hov-img-zoom pos-relative m-b-30" style=" box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+            <img src="@/assets/media.jpg" alt="IMG-BENNER"/>
+
+            <div class="block1-wrapbtn w-size2">
+              <!-- Button -->
+              <router-link to = "/products">
+                <a class="flex-c-m size2 m-text2 bg3 hov1 trans-0-4" >
+                  Gaming gear
+                </a>
+              </router-link>  
             </div>
           </div>
         </div>

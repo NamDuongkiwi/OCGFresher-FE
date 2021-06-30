@@ -5,20 +5,20 @@
       <div class="wrap_header">
         <!-- Logo -->
         <router-link to="/" class="logo">
-          <img src="@/assets/logo.png" alt="IMG-LOGO" />
+          <img src="@/assets/logo.png" alt="IMG-LOGO" style="max-height : 80px"/>
         </router-link>
 
         <!-- Menu -->
         <div class="wrap_menu">
           <nav class="menu">
             <ul class="main_menu">
-              <MenuItem to="/" label="Home" />
+              <MenuItem to="/" label="Trang chủ" />
 
-              <MenuItem to="/products" label="Products" />
+              <MenuItem to="/products" label="Sản phẩm" />
 
-              <MenuItem to="/about" label="About" />
+              <MenuItem to="/about" label="Giới thiệu" />
 
-              <MenuItem to="/contact" label="Contact" />
+              <MenuItem to="/contact" label="Liên hệ" />
             </ul>
           </nav>
         </div>
@@ -107,16 +107,16 @@
             </div>
           </li>
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
-            <router-link to="/">Home</router-link>
+            <router-link to="/">Trang chủ</router-link>
           </li>
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
-            <router-link to="/products">Products</router-link>
+            <router-link to="/products">Sản phẩm</router-link>
           </li>
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
-            <router-link to="/about">About</router-link>
+            <router-link to="/about">Giới thiệu</router-link>
           </li>
           <li class="item-menu-mobile" @click="closeMenuMobileDropdown">
-            <router-link to="/contact">Contact</router-link>
+            <router-link to="/contact">Liên hệ</router-link>
           </li>
         </ul>
       </nav>

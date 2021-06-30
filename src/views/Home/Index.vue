@@ -41,7 +41,7 @@
                       trans-0-4
                     "
                   >
-                    Shop Now
+                    Mua Ngay
                   </router-link>
                 </div>
               </div>
@@ -66,7 +66,6 @@
     </section>
 
     <!-- Instagram -->
-    <SectionInstagram />
 
     <!-- Shipping -->
     <SectionShipping />
@@ -79,7 +78,7 @@ import { Carousel, Slide } from "vue3-carousel";
 import { mapState } from "vuex";
 import ProductsCarousel from "@/components/ProductsCarousel.vue";
 import SectionBanner from "./SectionBanner.vue";
-import SectionInstagram from "./SectionInstagram.vue";
+//import SectionInstagram from "./SectionInstagram.vue";
 import SectionShipping from "./SectionShipping.vue";
 
 export default {
@@ -90,15 +89,15 @@ export default {
     Slide,
     ProductsCarousel,
     SectionBanner,
-    SectionInstagram,
+//    SectionInstagram,
     SectionShipping,
   },
 
   data() {
     return {
       slides: [
-        { id: 1, image: require("@/assets/banner.jpg") },
-        { id: 2, image: require("@/assets/banner02.jpg") },
+        { id: 1, image: require("@/assets/banner02.jpg") },
+        { id: 2, image: require("@/assets/banner.jpg") },
         { id: 3, image: require("@/assets/banner03.png") },
       ],
     };

@@ -1,13 +1,7 @@
 <template>
   <div>
     <!-- Title Page -->
-    <section
-      class="bg-title-page p-t-40 p-b-50 flex-col-c-m"
-      :style="{
-        backgroundImage:
-          'url(' + require('@/assets/heading-pages-01.jpg') + ')',
-      }"
-    >
+    <section>
       <h2 class="l-text2 t-center">Cart</h2>
     </section>
 
@@ -28,16 +22,16 @@
 
               <tr
                 class="table-row"
-                v-for="product in products"
-                :key="product.id"
+                v-for="item in items"
+                :key="item.id"
               >
                 <td class="column-1">
                   <div class="cart-img-product b-rad-4 o-f-hidden">
-                    <img :src="product.image" alt="IMG-PRODUCT" />
+                    <img :src="item.Images[0]" alt="IMG-PRODUCT" />
                   </div>
                 </td>
-                <td class="column-2">{{ product.name }}</td>
-                <td class="column-3">{{ currency(product.price) }}</td>
+                <td class="column-2">{{ item.name }}</td>
+                <td class="column-3">{{ currency(item.price) }}</td>
                 <td class="column-4">
                   <div class="flex-w bo5 of-hidden w-size17">
                     <button
@@ -51,8 +45,8 @@
                       "
                       @click="
                         updateProductQuantity({
-                          productId: product.id,
-                          value: product.quantity - 1,
+                          ItemId: item.id,
+                          value: item.quantity - 1,
                         })
                       "
                     >
@@ -63,10 +57,10 @@
                       class="size8 m-text18 t-center num-product"
                       type="number"
                       name="num-product1"
-                      :value="product.quantity"
+                      :value="item.quantity"
                       @input="
                         updateProductQuantity({
-                          productId: product.id,
+                          ItemId: item.id,
                           value: $event.target.value,
                         })
                       "
@@ -76,8 +70,8 @@
                       class="btn-num-product-up color1 flex-c-m size7 bg8 eff2"
                       @click="
                         updateProductQuantity({
-                          productId: product.id,
-                          value: product.quantity + 1,
+                          ItemId: item.id,
+                          value: item.quantity + 1,
                         })
                       "
                     >
@@ -85,7 +79,8 @@
                     </button>
                   </div>
                 </td>
-                <td class="column-5">{{ currency(product.totalPrice) }}</td>
+                <td class="column-5">{{ currency(item.totalPrice) }}</td>
+                 <td class="column-5"><button class="btn" @click="deleteItem($event, item.id)"><strong>X</strong></button></td>
               </tr>
 
               <tr class="table-row">
@@ -130,22 +125,22 @@
 import { mapState, mapMutations, mapGetters } from "vuex";
 import { currency } from "@/utils/currency";
 import CartTotals from "./CartTotals.vue";
-
 export default {
   name: "Cart",
-
   components: {
     CartTotals,
   },
-
   computed: {
-    ...mapState("cart", ["products", "isLoading"]),
+    ...mapState("cart", ["items", "isLoading"]),
     ...mapGetters("cart", ["subTotal"]),
   },
-
   methods: {
     currency,
-    ...mapMutations("cart", ["updateProductQuantity"]),
+    ...mapMutations("cart", ["updateProductQuantity", "setProducts"]),
+    deleteItem(event, id){
+      event.preventDefault();
+      this.$store.dispatch("cart/deleteItem",id)
+    }
   },
 };
 </script>
